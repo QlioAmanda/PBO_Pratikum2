@@ -1,49 +1,52 @@
-# 📘 Sistem KRS Mahasiswa
+# 🎓 Sistem KRS Mahasiswa
 
-Program sederhana berbasis Java yang mensimulasikan sistem **Kartu Rencana Studi (KRS)** mahasiswa.  
-Aplikasi ini dibuat untuk latihan konsep **OOP (Object Oriented Programming)** dengan menerapkan:  
-- **Class & Object**  
-- **Encapsulation**  
-- **Static field & method**  
-- **Relasi antar class (Dependency & Aggregation)**  
-- **Package & JAR file**
+Aplikasi sederhana berbasis **Java** untuk mensimulasikan sistem **Kartu Rencana Studi (KRS)** mahasiswa.  
+Project ini dibuat sebagai latihan konsep **Object Oriented Programming (OOP)** dengan menerapkan:
+
+- ✅ Class & Object  
+- ✅ Encapsulation  
+- ✅ Static Field & Method  
+- ✅ Relasi antar Class (Dependency & Aggregation)  
+- ✅ Package & JAR File  
 
 ---
 
-## 🚀 Fitur
-- User memilih **jurusan** dari 5 jurusan yang tersedia:
+## 🚀 Fitur Utama
+- Pilihan **Jurusan** dari 5 Program Studi:
   1. Teknik Informatika  
   2. Teknik Mesin  
   3. Teknik Sipil  
   4. Teknik Elektronika  
   5. Teknik Energi  
-- Input data mahasiswa (**Nama** dan **NIM**).  
-- Setiap jurusan memiliki daftar **mata kuliah**, **dosen**, dan **ID mata kuliah** yang berbeda.  
-- Program menampilkan daftar mata kuliah yang diambil beserta **total SKS**.  
-- Menghitung jumlah total mahasiswa dan jumlah total mata kuliah menggunakan **static counter**.  
+
+- Input **Data Mahasiswa**: Nama & NIM  
+- Setiap jurusan memiliki daftar **Mata Kuliah**, **Dosen**, dan **ID Mata Kuliah**  
+- Menampilkan daftar mata kuliah yang diambil + **total SKS**  
+- Menghitung total mahasiswa & total mata kuliah dengan **static counter**  
 
 ---
 
 ## 🏗️ Struktur Project
+
 ```
 
-PBO_Pratikum2/
- ├── src/                        # source code
- │    └── id/ac/polban/
- │         ├── model/
- │         │    ├── Jurusan.java
- │         │    ├── Mahasiswa.java
- │         │    └── MataKuliah.java
- │         └── service/
- │              └── Main.java
- ├── bin/                        # hasil compile (.class)
- ├── docs/                       # dokumentasi
- │    └── class-diagram.png       # UML class diagram
- ├── build.bat                   # script compile + run otomatis
- ├── manifest.txt                # konfigurasi JAR
- ├── KRSApp.jar                  # file JAR siap dijalankan
- ├── .gitignore                  # file untuk Git ignore
- └── README.md                   # dokumentasi project
+PBO\_Pratikum2/
+├── src/
+│    └── id/ac/polban/
+│         ├── model/
+│         │    ├── Jurusan.java
+│         │    ├── Mahasiswa.java
+│         │    └── MataKuliah.java
+│         └── service/
+│              └── Main.java
+├── bin/                        # hasil compile (.class)
+├── docs/                       # dokumentasi
+│    └── class-diagram.png       # UML class diagram
+├── build.bat                   # script compile + run otomatis
+├── manifest.txt                # konfigurasi JAR
+├── KRSApp.jar                  # file JAR siap dijalankan
+├── .gitignore                  # file untuk Git ignore
+└── README.md                   # dokumentasi project
 
 ````
 
@@ -51,26 +54,24 @@ PBO_Pratikum2/
 
 ## ⚙️ Cara Menjalankan
 
-### 1. Jalankan langsung JAR
+### ▶️ 1. Jalankan langsung JAR
 ```bash
 java -jar KRSApp.jar
 ````
 
-### 2. Compile manual
+### 🛠️ 2. Compile manual
 
 ```bash
 javac -d bin src/id/ac/polban/model/*.java src/id/ac/polban/service/*.java
 ```
 
-### 3. Buat JAR manual
+### 📦 3. Buat JAR manual
 
 ```bash
 jar cfm KRSApp.jar manifest.txt -C bin .
 ```
 
-### 4. Compile & Run otomatis (Windows)
-
-Cukup jalankan:
+### ⚡ 4. Compile & Run otomatis (Windows)
 
 ```bash
 .\build.bat
@@ -82,11 +83,12 @@ Cukup jalankan:
 
 * **Aggregation**
 
-  * `Jurusan` memiliki (`has-a`) daftar `MataKuliah`.
-  * `Mahasiswa` memiliki (`has-a`) `Jurusan`.
+  * `Jurusan` memiliki (`has-a`) daftar `MataKuliah`
+  * `Mahasiswa` memiliki (`has-a`) `Jurusan`
+
 * **Dependency**
 
-  * `Main` menggunakan (`uses-a`) `Mahasiswa`, `Jurusan`, `MataKuliah` untuk menjalankan sistem.
+  * `Main` menggunakan (`uses-a`) `Mahasiswa`, `Jurusan`, `MataKuliah`
 
 ---
 
@@ -118,24 +120,26 @@ Total SKS : 9
 Jumlah Mahasiswa: 1
 Jumlah Mata Kuliah: 3
 ```
-## 📊 Class Diagram
+
+---
+
+## 📌 Class Diagram
+
 ![Class Diagram](docs/class-diagram.png)
----
-
-## 📌 Lesson Learned
-
-* Membuat **class dan object** di Java.
-* Menerapkan **encapsulation** (`private` attribute + getter).
-* Menggunakan **ArrayList** untuk menyimpan daftar mata kuliah.
-* Menerapkan **static field & method** untuk counter mahasiswa dan mata kuliah.
-* Menerapkan **package** untuk memisahkan `model` dan `service`.
-* Membuat **JAR file** agar aplikasi bisa dijalankan dengan `java -jar`.
 
 ---
 
-👨‍💻 Dibuat untuk latihan **Praktikum PBO Minggu ke-2 & 3**.
+## 📝 Lesson Learned
+
+* Membuat **Class & Object** di Java
+* Menerapkan **Encapsulation** (`private` attribute + getter/setter)
+* Menggunakan **ArrayList** untuk menyimpan daftar mata kuliah
+* Menerapkan **Static Field & Method** untuk counter mahasiswa & mata kuliah
+* Memanfaatkan **Package** untuk memisahkan `model` & `service`
+* Membuat **JAR file** agar aplikasi bisa dijalankan dengan `java -jar`
+
+---
+
+👨‍💻 Dibuat untuk latihan **Praktikum PBO Minggu ke-2 & 3**
 
 ```
-
----
-
