@@ -1,9 +1,11 @@
+package id.ac.polban.service;
+
 import java.util.ArrayList;
 import java.util.Scanner;
+import id.ac.polban.model.*;
 
 public class Main {
     public static void main(String[] args) {
-        // Gunakan try-with-resources agar Scanner otomatis ditutup
         try (Scanner sc = new Scanner(System.in)) {
             ArrayList<Jurusan> daftarJurusan = new ArrayList<>();
 
@@ -49,7 +51,7 @@ public class Main {
 
             System.out.print("Masukkan pilihan jurusan: ");
             int pilihan = sc.nextInt();
-            sc.nextLine(); // buang newline
+            sc.nextLine();
             Jurusan jurusanDipilih = daftarJurusan.get(pilihan - 1);
 
             // Input data mahasiswa
@@ -75,6 +77,8 @@ public class Main {
             }
 
             System.out.println("\nTotal SKS : " + totalSKS);
+            System.out.println("Jumlah Mahasiswa: " + Mahasiswa.getJumlahMahasiswa());
+            System.out.println("Jumlah Mata Kuliah: " + MataKuliah.getJumlahMataKuliah());
         }
     }
 }

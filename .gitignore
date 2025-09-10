@@ -1,0 +1,10 @@
+# Ignore hasil compile
+bin/
+*.class
+
+# Ignore file sementara
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db

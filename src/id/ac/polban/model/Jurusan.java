@@ -1,3 +1,5 @@
+package id.ac.polban.model;
+
 import java.util.ArrayList;
 
 public class Jurusan {

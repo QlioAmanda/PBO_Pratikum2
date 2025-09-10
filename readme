@@ -1,7 +1,12 @@
-# Sistem KRS Mahasiswa
+# 📘 Sistem KRS Mahasiswa
 
 Program sederhana berbasis Java yang mensimulasikan sistem **Kartu Rencana Studi (KRS)** mahasiswa.  
-Aplikasi ini dibuat untuk latihan konsep **OOP (Object Oriented Programming)** dengan menggunakan **enkapsulasi** dan relasi antar class.
+Aplikasi ini dibuat untuk latihan konsep **OOP (Object Oriented Programming)** dengan menerapkan:  
+- **Class & Object**  
+- **Encapsulation**  
+- **Static field & method**  
+- **Relasi antar class (Dependency & Aggregation)**  
+- **Package & JAR file**
 
 ---
 
@@ -15,32 +20,122 @@ Aplikasi ini dibuat untuk latihan konsep **OOP (Object Oriented Programming)** d
 - Input data mahasiswa (**Nama** dan **NIM**).  
 - Setiap jurusan memiliki daftar **mata kuliah**, **dosen**, dan **ID mata kuliah** yang berbeda.  
 - Program menampilkan daftar mata kuliah yang diambil beserta **total SKS**.  
+- Menghitung jumlah total mahasiswa dan jumlah total mata kuliah menggunakan **static counter**.  
 
 ---
 
 ## 🏗️ Struktur Project
-- `MataKuliah.java` → Class untuk menyimpan data mata kuliah.  
-- `Jurusan.java` → Class untuk menyimpan jurusan beserta daftar mata kuliahnya.  
-- `Mahasiswa.java` → Class untuk menyimpan data mahasiswa.  
-- `Main.java` → File utama untuk menjalankan program.  
+```
+
+PBO_Pratikum2/
+ ├── src/                        # source code
+ │    └── id/ac/polban/
+ │         ├── model/
+ │         │    ├── Jurusan.java
+ │         │    ├── Mahasiswa.java
+ │         │    └── MataKuliah.java
+ │         └── service/
+ │              └── Main.java
+ ├── bin/                        # hasil compile (.class)
+ ├── docs/                       # dokumentasi
+ │    └── class-diagram.png       # UML class diagram
+ ├── build.bat                   # script compile + run otomatis
+ ├── manifest.txt                # konfigurasi JAR
+ ├── KRSApp.jar                  # file JAR siap dijalankan
+ ├── .gitignore                  # file untuk Git ignore
+ └── README.md                   # dokumentasi project
+
+````
 
 ---
 
 ## ⚙️ Cara Menjalankan
-1. Clone repo ini atau copy semua file `.java` ke dalam folder yang sama.  
-2. Buka terminal pada folder project.  
-3. Compile semua file:  javac *.java 
-4. Jalankan program: java Main 
 
+### 1. Jalankan langsung JAR
+```bash
+java -jar KRSApp.jar
+````
+
+### 2. Compile manual
+
+```bash
+javac -d bin src/id/ac/polban/model/*.java src/id/ac/polban/service/*.java
+```
+
+### 3. Buat JAR manual
+
+```bash
+jar cfm KRSApp.jar manifest.txt -C bin .
+```
+
+### 4. Compile & Run otomatis (Windows)
+
+Cukup jalankan:
+
+```bash
+.\build.bat
+```
+
+---
+
+## 📊 Relasi Antar Kelas
+
+* **Aggregation**
+
+  * `Jurusan` memiliki (`has-a`) daftar `MataKuliah`.
+  * `Mahasiswa` memiliki (`has-a`) `Jurusan`.
+* **Dependency**
+
+  * `Main` menggunakan (`uses-a`) `Mahasiswa`, `Jurusan`, `MataKuliah` untuk menjalankan sistem.
+
+---
+
+## 🖥️ Contoh Output Program
+
+```
+===== Sistem KRS Mahasiswa =====
+Pilih Jurusan:
+1. Teknik Informatika
+2. Teknik Mesin
+3. Teknik Sipil
+4. Teknik Elektronika
+5. Teknik Energi
+Masukkan pilihan jurusan: 1
+Masukkan Nama: Jeno
+Masukkan NIM: 241511087
+
+=== Data Mahasiswa ===
+Nama: Jeno
+NIM: 241511087
+Jurusan: Teknik Informatika
+
+Daftar Mata Kuliah:
+- IF101 | Pemrograman Dasar (3 SKS) | Dosen: Budi Santoso
+- IF102 | Struktur Data (3 SKS) | Dosen: Siti Aminah
+- IF103 | Basis Data (3 SKS) | Dosen: Dewi Lestari
+
+Total SKS : 9
+Jumlah Mahasiswa: 1
+Jumlah Mata Kuliah: 3
+```
+## 📊 Class Diagram
+![Class Diagram](docs/class-diagram.png)
 ---
 
 ## 📌 Lesson Learned
-- Belajar membuat **class dan object** di Java.  
-- Menerapkan **enkapsulasi** dengan `private` attribute + getter & setter.  
-- Menggunakan **ArrayList** untuk menyimpan daftar mata kuliah.  
-- Membangun relasi antar class (`Mahasiswa` → `Jurusan` → `MataKuliah`).  
-- Membuat program sederhana tapi mendekati dunia nyata.  
+
+* Membuat **class dan object** di Java.
+* Menerapkan **encapsulation** (`private` attribute + getter).
+* Menggunakan **ArrayList** untuk menyimpan daftar mata kuliah.
+* Menerapkan **static field & method** untuk counter mahasiswa dan mata kuliah.
+* Menerapkan **package** untuk memisahkan `model` dan `service`.
+* Membuat **JAR file** agar aplikasi bisa dijalankan dengan `java -jar`.
 
 ---
 
-👨‍💻 Dibuat untuk latihan praktikum PBO Minggu ke-2.
+👨‍💻 Dibuat untuk latihan **Praktikum PBO Minggu ke-2 & 3**.
+
+```
+
+---
+
