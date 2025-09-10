@@ -3,11 +3,11 @@
 Aplikasi sederhana berbasis **Java** untuk mensimulasikan sistem **Kartu Rencana Studi (KRS)** mahasiswa.  
 Project ini dibuat sebagai latihan konsep **Object Oriented Programming (OOP)** dengan menerapkan:
 
-- ✅ Class & Object  
-- ✅ Encapsulation  
-- ✅ Static Field & Method  
-- ✅ Relasi antar Class (Dependency & Aggregation)  
-- ✅ Package & JAR File  
+- 🏷️ **Class & Object**  
+- 🔒 **Encapsulation**  
+- 📌 **Static field & method**  
+- 🔗 **Relasi antar class (Dependency & Aggregation)**  
+- 📦 **Package & JAR file**  
 
 ---
 
@@ -107,7 +107,7 @@ Masukkan Nama: Jeno
 Masukkan NIM: 241511087
 
 === Data Mahasiswa ===
-Nama: Jeno
+Nama: Qlio
 NIM: 241511087
 Jurusan: Teknik Informatika
 
